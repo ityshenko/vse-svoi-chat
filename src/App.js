@@ -431,7 +431,7 @@ const App = () => {
              <p className="text-sm text-gray-400">Выберите чат или создайте новый</p>
           </div>
         )}
-          </div>
+        </div>
     </div>
   );
 };
