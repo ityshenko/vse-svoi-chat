@@ -53,7 +53,6 @@ const App = () => {
   const [isSearching, setIsSearching] = useState(false);
 
   // --- Mock Data State (Design) ---
-  // Инициализируем моки сразу, чтобы избежать ошибок "cannot read property of undefined"
   const [mockChats, setMockChats] = useState([
     { 
       id: 'chat_1', name: "Bessie Cooper", avatar: "https://i.pravatar.cc/150?u=1", unread: 2, type: 'personal', 
@@ -102,7 +101,7 @@ const App = () => {
 
   // ===== EFFECTS =====
   
-  // Проверка авторизации (ИСПРАВЛЕНО: убраны дубликаты)
+  // 1. Проверка авторизации
   useEffect(() => {
     const checkUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
@@ -116,7 +115,7 @@ const App = () => {
           email: session.user.email || prev.email,
         }));
         
-        // Проверка админа (безопасный запрос)
+        // Проверка админа
         const { data: profile } = await supabase
           .from('profiles')
           .select('is_admin')
@@ -149,7 +148,7 @@ const App = () => {
     return () => subscription?.unsubscribe();
   }, []);
 
-  // Адаптивность
+  // 2. Адаптивность
   useEffect(() => {
     const checkDevice = () => {
       const width = window.innerWidth;
@@ -162,7 +161,7 @@ const App = () => {
     return () => window.removeEventListener('resize', checkDevice);
   }, [selectedMockChatId, selectedRealChatId]);
 
-  // Загрузка сообщений для реального чата
+  // 3. Загрузка сообщений
   useEffect(() => {
     if (!selectedRealChatId) return;
 
