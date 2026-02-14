@@ -37,7 +37,11 @@ const App = () => {
         setUser(session.user);
         setIsAuthenticated(true);
         // Проверка админа (если есть таблица profiles)
-        const { data: profile } = await supabase.from('profiles').select('is_admin').eq('id', session.user.id).single();
+        const { data: profile } = await supabase
+  .from('profiles')
+  .select('is_admin')
+  .eq('id', session.user.id)
+  .maybeSingle(); // ИЗМЕНЕНО ЗДЕСЬ
         setIsAdmin(profile?.is_admin || false);
       }
       setLoading(false);
