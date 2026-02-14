@@ -1,75 +1,20 @@
-\* \uc0\u1054 \u1089 \u1085 \u1086 \u1074 \u1085 \u1086 \u1081  \u1089 \u1073 \u1088 \u1086 \u1089  \u1089 \u1090 \u1080 \u1083 \u1077 \u1081  */\
-* \{\
-  margin: 0;\
-  padding: 0;\
-  box-sizing: border-box;\
-\}\
-\
-/* \uc0\u1053 \u1072 \u1089 \u1090 \u1088 \u1086 \u1081 \u1082 \u1072  \u1096 \u1088 \u1080 \u1092 \u1090 \u1072  \u1080  \u1092 \u1086 \u1085 \u1072  \u1076 \u1083 \u1103  \u1074 \u1089 \u1077 \u1075 \u1086  \u1087 \u1088 \u1080 \u1083 \u1086 \u1078 \u1077 \u1085 \u1080 \u1103  */\
-body \{\
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\
-    sans-serif;\
-  -webkit-font-smoothing: antialiased;\
-  -moz-osx-font-smoothing: grayscale;\
-  background-color: #1b1b1c; /* \uc0\u1058 \u1077 \u1084 \u1085 \u1099 \u1081  \u1092 \u1086 \u1085  \u1087 \u1086  \u1091 \u1084 \u1086 \u1083 \u1095 \u1072 \u1085 \u1080 \u1102  */\
-  color: white; /* \uc0\u1041 \u1077 \u1083 \u1099 \u1081  \u1090 \u1077 \u1082 \u1089 \u1090  \u1087 \u1086  \u1091 \u1084 \u1086 \u1083 \u1095 \u1072 \u1085 \u1080 \u1102  */\
-\}\
-\
-/* \uc0\u1050 \u1086 \u1076  \u1080 \u1079  \u1090 \u1074 \u1086 \u1077 \u1075 \u1086  \u1084 \u1086 \u1085 \u1086 \u1083 \u1080 \u1090 \u1085 \u1086 \u1075 \u1086  \u1092 \u1072 \u1081 \u1083 \u1072  \u1076 \u1083 \u1103  \u1082 \u1072 \u1089 \u1090 \u1086 \u1084 \u1085 \u1086 \u1075 \u1086  \u1089 \u1082 \u1088 \u1086 \u1083 \u1083 \u1073 \u1072 \u1088 \u1072  */\
-.custom-scrollbar::-webkit-scrollbar \{\
-  width: 6px;\
-\}\
-\
-.custom-scrollbar::-webkit-scrollbar-track \{\
-  background: transparent;\
-\}\
-\
-.custom-scrollbar::-webkit-scrollbar-thumb \{\
-  background: #4a5568;\
-  border-radius: 3px;\
-\}\
-\
-.custom-scrollbar::-webkit-scrollbar-thumb:hover \{\
-  background: #718096;\
-\}\
-\
-/* \uc0\u1057 \u1082 \u1088 \u1099 \u1090 \u1080 \u1077  \u1089 \u1082 \u1088 \u1086 \u1083 \u1083 \u1073 \u1072 \u1088 \u1072  \u1076 \u1083 \u1103  \u1085 \u1077 \u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1093  \u1101 \u1083 \u1077 \u1084 \u1077 \u1085 \u1090 \u1086 \u1074  */\
-.no-scrollbar::-webkit-scrollbar \{\
-  display: none;\
-\}\
-\
-/* \uc0\u1055 \u1083 \u1072 \u1074 \u1085 \u1086 \u1077  \u1087 \u1086 \u1103 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  \u1101 \u1083 \u1077 \u1084 \u1077 \u1085 \u1090 \u1086 \u1074  (\u1072 \u1085 \u1080 \u1084 \u1072 \u1094 \u1080 \u1103 ) */\
-.animate-in \{\
-  animation: fade-in 0.3s ease-out;\
-\}\
-\
-@keyframes fade-in \{\
-  from \{\
-    opacity: 0;\
-    transform: translateY(10px);\
-  \}\
-  to \{\
-    opacity: 1;\
-    transform: translateY(0);\
-  \}\
-\}\
-\
-/* \uc0\u1051 \u1086 \u1075 \u1086 \u1090 \u1080 \u1087  (\u1075 \u1088 \u1072 \u1076 \u1080 \u1077 \u1085 \u1090 ) */\
-.logo-text \{\
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\
-  -webkit-background-clip: text;\
-  -webkit-text-fill-color: transparent;\
-  background-clip: text;\
-\}\
-\
-/* \uc0\u1040 \u1085 \u1080 \u1084 \u1072 \u1094 \u1080 \u1103  \u1087 \u1091 \u1083 \u1100 \u1089 \u1072 \u1094 \u1080 \u1080  */\
-.pulse-animation \{\
-  animation: pulse 2s infinite;\
-\}\
-\
-@keyframes pulse \{\
-  0% \{ opacity: 1; \}\
-  50% \{ opacity: 0.5; \}\
-  100% \{ opacity: 1; \}\
-\}}
+/* Сброс стилей */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #1b1b1c;
+  color: white;
+}
+
+/* Скроллбар */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 3px; }
+
+/* Анимации */
+.animate-in { animation: fade-in 0.3s ease-out; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* Логотип */
+.logo-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
