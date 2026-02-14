@@ -30,31 +30,46 @@ const App = () => {
   const [realMessages, setRealMessages] = useState([]);
 
   // Проверка авторизации
-  useEffect(() => {
+    useEffect(() => {
     const checkUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
         setUser(session.user);
         setIsAuthenticated(true);
-        // Проверка админа (если есть таблица profiles)
+        setProfileData(prev => ({
+          ...prev,
+          name: session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'Пользователь',
+          email: session.user.email || prev.email,
+        }));
+        
+        // --- ИСПРАВЛЕННАЯ ЧАСТЬ ---
         const { data: profile } = await supabase
-  .from('profiles')
-  .select('is_admin')
-  .eq('id', session.user.id)
-  .maybeSingle(); // ИЗМЕНЕНО ЗДЕСЬ
+          .from('profiles')
+          .select('is_admin')
+          .eq('id', session.user.id)
+          .maybeSingle(); // Безопасный запрос
+        
         setIsAdmin(profile?.is_admin || false);
+        
+        await loadRealChats(session.user.id);
+        // -------------------------
       }
       setLoading(false);
     };
+
     checkUser();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (event === 'SIGNED_IN' && session?.user) {
         setUser(session.user);
         setIsAuthenticated(true);
+        await loadRealChats(session.user.id);
       } else if (event === 'SIGNED_OUT') {
         setUser(null);
         setIsAuthenticated(false);
+        setIsAdmin(false);
+        setRealChats([]);
+        setSelectedRealChatId(null);
       }
     });
 
