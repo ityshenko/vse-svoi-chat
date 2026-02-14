@@ -6,7 +6,7 @@
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 \{\
-  "name": "messenger-app",\
+  "name": "vse-svoi-chat",\
   "version": "0.1.0",\
   "private": true,\
   "dependencies": \{\
@@ -17,6 +17,26 @@
   \},\
   "scripts": \{\
     "start": "react-scripts start",\
-    "build": "react-scripts build"\
+    "build": "react-scripts build",\
+    "test": "react-scripts test",\
+    "eject": "react-scripts eject"\
+  \},\
+  "eslintConfig": \{\
+    "extends": [\
+      "react-app",\
+      "react-app/jest"\
+    ]\
+  \},\
+  "browserslist": \{\
+    "production": [\
+      ">0.2%",\
+      "not dead",\
+      "not op_mini all"\
+    ],\
+    "development": [\
+      "last 1 chrome version",\
+      "last 1 firefox version",\
+      "last 1 safari version"\
+    ]\
   \}\
 \}}
