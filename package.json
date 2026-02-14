@@ -1,5 +1,5 @@
 {
-  "name": "vse-svoi-chat",
+  "name": "messenger-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,14 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+    "build": "react-scripts build"
   },
   "browserslist": {
     "production": [
